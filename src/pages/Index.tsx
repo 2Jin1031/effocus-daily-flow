@@ -1,11 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '@/components/Header';
+import TodaySchedule from '@/components/TodaySchedule';
+import LocationTodos from '@/components/LocationTodos';
+import TravelRecommendation from '@/components/TravelRecommendation';
+import { todaySchedule, locationTodos, travelRecommendation } from '@/data/mockData';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      <div className="max-w-md mx-auto bg-white shadow-lg">
+        <TodaySchedule schedules={todaySchedule} />
+        
+        <div className="border-t border-gray-100">
+          <LocationTodos todos={locationTodos} />
+        </div>
+        
+        <div className="border-t border-gray-100">
+          <TravelRecommendation recommendation={travelRecommendation} />
+        </div>
       </div>
     </div>
   );
