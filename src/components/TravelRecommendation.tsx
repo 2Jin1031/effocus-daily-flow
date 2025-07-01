@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { TravelRecommendation } from '@/types';
+import { TravelRecommendation as TravelRecommendationType } from '@/types';
 
 interface TravelRecommendationProps {
-  recommendation: TravelRecommendation;
+  recommendation: TravelRecommendationType;
 }
 
 const TravelRecommendation = ({ recommendation }: TravelRecommendationProps) => {
