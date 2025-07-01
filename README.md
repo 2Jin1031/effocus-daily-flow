@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# 📊 Effocus: 노력 없이 집중하는 자동화 일정 관리 플랫폼
 
-## Project info
+> 반복되는 일상 속 이동, 일정, 행동, 할 일을 예측 기반으로 자동 설계하고, 사용자는 결정만 하면 되는 시간·공간 통합 행동 유도 시스템
 
-**URL**: https://lovable.dev/projects/afcc0100-8d86-47c8-87eb-397e89e5aeb4
+---
 
-## How can I edit this code?
+## 목차
 
-There are several ways of editing your application.
+1. [프로젝트 개요](#프로젝트-개요)  
+2. [페르소나 및 사용자 시나리오](#페르소나-및-사용자-시나리오)  
+3. [핵심 가치 제안](#핵심-가치-제안)  
+4. [핵심 기능](#핵심-기능)  
+5. [구현 범위](#구현-범위) 
+6. [팀원 소개](#팀원-소개)  
+7. [사이트 주소](#사이트-주소)  
+8. [테스트 및 배포](#테스트-및-배포)  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/afcc0100-8d86-47c8-87eb-397e89e5aeb4) and start prompting.
+## 프로젝트 개요
 
-Changes made via Lovable will be committed automatically to this repo.
+| 항목         | 내용                                             |
+|------------|--------------------------------------------------|
+| 프로젝트명    | effocus (effortless + focus)                   |
+| 주관         | 우아한테크코스 7기 BE 칼리                              |
+| 목표         | 반복되는 일상을 기반으로 행동을 예측하고 실행을 유도하는 시스템 |
+| 기술스택      | Java, Spring Boot Cloud, TypeScript            |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 페르소나 및 사용자 시나리오
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 페르소나: 바쁜 우테코 크루, 칼리(2N세)
+- 월: 13시 출근 / 화~금: 10시 출근 / 주말: 유동적
+- 정신 없이 다양한 메모가 생기며 정리 시간 부족
+- 목표: 최대한 효율적으로 시간 사용, 반복 작업 자동화 희망
 
-Follow these steps:
+### 사용자 시나리오
+1. 어플 실행 → 오늘 일정 기반으로 자동 경로 추천
+2. 예: "8시 23분 출발 시 회의 5분 전 도착"
+3. 빠르게 준비 후 출발 결정
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 인수 조건
+- Given: 사용자가 앱에 접속했을 때  
+- When: 특정 시각이 되었을 때  
+- Then: 현재 해야 할 일을 자동 안내
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 핵심 가치 제안
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. **인지 부담 최소화**  
+   - 일상 패턴 학습 → 자동 제안  
+2. **즉각 결정 지원**  
+   - 사용자는 결정만 함 → 결정 피로 해소  
+3. **실행 중심 구조화**  
+   - 캘린더, 지도, TODO 없이 실행에 집중  
+4. **행동 변화 유도**  
+   - 출발·도착 타이밍, 위치 기반 행동 자동 안내  
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 핵심 기능
 
-**Use GitHub Codespaces**
+### 1. 일정 예측 및 출발 유도
+- 네이버맵 API 기반 실시간 이동 시간 예측
+- 출발 시각 자동 추천
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 2. 장소 기반 TODO
+- 메모 기반 장소-행동 추출 (예: "다이소 - 칫솔")
+- 해당 장소 도착 시 자동 알림
 
-## What technologies are used for this project?
+### 3. 동선 기반 TODO 리마인드
+- 현재 경로 기반 TODO 제안
+- 제안 수락 시 경로에 자동 반영
 
-This project is built with:
+### 4. 하루 일정 자동 설계 + 시각화
+- 일정, TODO, 위치 기반 타임라인 생성
+- 이동 포함 전체 스케줄 시각화
+- 여유 시간, 예상 지연, 완료율 표시
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 구현 범위
 
-Simply open [Lovable](https://lovable.dev/projects/afcc0100-8d86-47c8-87eb-397e89e5aeb4) and click on Share -> Publish.
+- 실제 AI 없이 목업 데이터 기반 프로토타입
+- 미리 정의된 일정 패턴 활용
+- 주요 위치/이동 범위 제한: 주거지 ↔ 잠실역 ↔ 루터회관
+- 교통 수단: 지하철 + 도보
+- 일정/TODO 소스: 우테코 커리큘럼 및 수동 입력 메모
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 팀원 소개
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+| 역할   | 프로필                                                  | 이름                        | 담당     |
+|------|---------------------------------------------------------|---------------------------|--------|
+| 팀원   | <img src="https://github.com/2Jin1031.png" width="80"> | [이진(칼리)](https://github.com/2Jin1031) | 백엔드 개발 |
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## 사이트 주소
+
+- 공식 배포 주소: [lovable.dev](https://lovable.dev/projects/afcc0100-8d86-47c8-87eb-397e89e5aeb4)
+
+---
+
+## 테스트 및 배포
+
+- GitHub Actions 기반 CI/CD 자동화
+
+---
+
+## 참고 자료
+
+- [Naver Map Directions API](https://api.ncloud-docs.com/docs/ai-naver-mapsdirections-driving)
