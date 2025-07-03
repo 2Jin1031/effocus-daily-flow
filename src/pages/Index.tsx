@@ -16,11 +16,11 @@ const Index = () => {
         <TodaySchedule schedules={todaySchedule} />
         
         <div className="border-t border-gray-100">
-          <LocationTodos todos={locationTodos} />
+          <TravelRecommendation recommendation={travelRecommendation} />
         </div>
         
         <div className="border-t border-gray-100">
-          <TravelRecommendation recommendation={travelRecommendation} />
+          <LocationTodos todos={locationTodos} />
         </div>
       </div>
       
