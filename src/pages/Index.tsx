@@ -2,10 +2,9 @@
 import React from 'react';
 import Header from '@/components/Header';
 import TodaySchedule from '@/components/TodaySchedule';
-import LocationTodos from '@/components/LocationTodos';
 import TravelRecommendation from '@/components/TravelRecommendation';
 import BottomNavigation from '@/components/BottomNavigation';
-import { todaySchedule, locationTodos, travelRecommendation } from '@/data/mockData';
+import { todaySchedule, travelRecommendation } from '@/data/mockData';
 
 const Index = () => {
   return (
@@ -17,10 +16,6 @@ const Index = () => {
         
         <div className="border-t border-gray-100">
           <TravelRecommendation recommendation={travelRecommendation} />
-        </div>
-        
-        <div className="border-t border-gray-100">
-          <LocationTodos todos={locationTodos} />
         </div>
       </div>
       
